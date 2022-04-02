@@ -1,0 +1,130 @@
+body{
+    background-color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    //background-color: aqua;
+    text-align: center;
+}
+
+span{
+    color: gray;
+}
+
+.instant-weather{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-between;
+    color: #fff;
+    //background-color: bisque;
+    height: 55vh;
+
+    .instant-weather__title{
+        font-size: 1.5em;
+        margin-top: 1em;
+    }
+
+    .instant-weather__bloc{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-self: center;
+        border: solid #fff;
+        border-radius: 50%;
+        height: 225px;
+        width: 225px;
+        margin-bottom: 2em;
+
+        .instant-weather__temp{
+            margin: 0;
+            font-size: 5em;
+            font-weight: 900;
+        }
+
+        .instant-weather__description{
+            font-size: 1.5em;
+            margin: 0.5em;
+        }
+
+        .instant-weather__wind{
+            margin: 0;
+            font-size: 0.8em;
+        }
+    }
+}
+
+.hourly-weather{
+    display: flex;
+    background-color: black;
+    overflow-x: scroll;
+    
+    .hourly-weather__container{
+        color: #fff;
+        margin: 0.8em;
+
+        .hourly-weather__hour{
+            margin: 0.5em;
+        }
+
+        .hourly-weather__temp-bloc{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: solid #fff;
+            border-radius: 50%;
+            height: 50px;
+            width: 50px;
+
+            .hourly-weather__temp{
+                margin: 0;
+            }
+        }
+    }
+}
+
+.day-weather{
+    //background-color: pink;
+    display: flex;
+    overflow-x: scroll;
+
+    .day-weather__container{
+        //background-color: red;
+        color: #fff;
+        margin: 0.8em;
+
+        .day-weather__day{
+            margin: 0.5em;
+        }
+
+        .day-weather__temp-bloc{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            border: solid #fff;
+            border-radius: 10px;
+            height: 100px;
+            width: 50px;
+
+            .day-weather__min-temp{
+                margin-top: 0.8em;
+                margin-bottom: 0;
+            }
+
+            .day-weather__max-temp{
+                margin-bottom: 0;
+            }
+
+            img{
+                width: 100%;
+            }
+        }
+    }
+}
