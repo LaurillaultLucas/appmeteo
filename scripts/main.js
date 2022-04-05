@@ -9,11 +9,13 @@ const temp = document.querySelector('.instant-weather__temp');
 //hourly weather
 const hour = document.querySelectorAll('.hourly-weather__hour');
 const tempHour = document.querySelectorAll('.hourly-weather__temp');
+const hourlyLogo = document.querySelectorAll('.hourly-weather__logo')
 
 // weather by day
 const day = document.querySelectorAll('.day-weather__day');
 const minTemp = document.querySelectorAll('.day-weather__min-temp');
 const maxTemp = document.querySelectorAll('.day-weather__max-temp');
+const dayLogo = document.querySelectorAll('.day-weather__logo');
 
 let resultsAPI;
 //Geolocation activate
@@ -66,6 +68,8 @@ function callAPI(lon, lat) {
             //temp by hour
             for(let n = 0; n < tempHour.length; n++) {
                 tempHour[n].innerHTML = Math.trunc(resultsAPI.hourly[n * 3].temp) + '<span>°</span>';
+
+                hourlyLogo[n].src = `assets/${resultsAPI.hourly[n * 3].weather[0].icon}.png`;
             }
 
             //first three letters of days
@@ -73,14 +77,12 @@ function callAPI(lon, lat) {
                 day[x].innerText = dayInOrder[x].slice(0,3);
             }
 
-            // min temp by day
+            // min and max temp by day
             for(let m = 0; m < 7; m++){
-                minTemp[m].innerHTML = Math.trunc(resultsAPI.daily[m + 1].temp.min);
-            }
-
-            // max temp by day
-            for(let m = 0; m < 7; m++){
-                maxTemp[m].innerHTML = Math.trunc(resultsAPI.daily[m + 1].temp.max);
+                minTemp[m].innerHTML = Math.trunc(resultsAPI.daily[m].temp.min) + '<span>°</span>';
+                maxTemp[m].innerHTML = Math.trunc(resultsAPI.daily[m].temp.max) + '<span>°</span>';
+                dayLogo[m].src = `assets/${resultsAPI.daily[m].weather[0].icon}.png`;
+                
             }
     })
 } 

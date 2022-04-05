@@ -77,14 +77,20 @@ span{
         .hourly-weather__temp-bloc{
             display: flex;
             justify-content: center;
+            flex-direction: column;
             align-items: center;
             border: solid #fff;
-            border-radius: 50%;
-            height: 50px;
+            border-radius: 10px;
+            height: 80px;
             width: 50px;
 
+            img{
+                width: 100%;
+            }
+
             .hourly-weather__temp{
-                margin: 0;
+                margin-top: 0.8em;
+                margin-bottom: 0;
             }
         }
     }
