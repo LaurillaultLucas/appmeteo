@@ -47,6 +47,7 @@ span {
 .instant-weather .instant-weather__bloc .instant-weather__description {
   font-size: 1.5em;
   margin: 0.5em;
+  text-transform: capitalize;
 }
 .instant-weather .instant-weather__bloc .instant-weather__wind {
   margin: 0;
