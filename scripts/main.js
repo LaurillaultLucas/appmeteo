@@ -1,4 +1,7 @@
 import dayInOrder from './Components/day.js';
+import darkMode from './Components/darkMode.js';
+
+darkMode();
 
 const apiKey = '5f916eca6fa7f042a148dfbdaef39e9f';
 
@@ -82,7 +85,6 @@ function callAPI(lon, lat) {
                 minTemp[m].innerHTML = Math.trunc(resultsAPI.daily[m].temp.min) + '<span>°</span>';
                 maxTemp[m].innerHTML = Math.trunc(resultsAPI.daily[m].temp.max) + '<span>°</span>';
                 dayLogo[m].src = `assets/${resultsAPI.daily[m].weather[0].icon}.png`;
-                
             }
     })
 } 

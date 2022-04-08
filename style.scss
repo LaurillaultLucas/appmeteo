@@ -1,5 +1,9 @@
+//Variable
+$light: #FAFAFA;
+$dark: #18181C;
+
 body{
-    background-color: #000;
+    background-color: $light;
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
 }
@@ -7,9 +11,8 @@ body{
 main{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     height: 100vh;
-    //background-color: aqua;
     text-align: center;
 }
 
@@ -21,26 +24,17 @@ span{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    justify-content: space-between;
-    color: #fff;
-    //background-color: bisque;
-    height: 55vh;
-
-    .instant-weather__title{
-        font-size: 1.5em;
-        margin-top: 1em;
-    }
 
     .instant-weather__bloc{
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-self: center;
-        border: solid #fff;
+        border: solid $dark;
         border-radius: 50%;
         height: 225px;
         width: 225px;
-        margin-bottom: 2em;
+        margin-top: 2em;
 
         .instant-weather__temp{
             margin: 0;
@@ -53,21 +47,14 @@ span{
             margin: 0.5em;
             text-transform: capitalize;
         }
-
-        .instant-weather__wind{
-            margin: 0;
-            font-size: 0.8em;
-        }
     }
 }
 
 .hourly-weather{
     display: flex;
-    background-color: black;
     overflow-x: scroll;
     
     .hourly-weather__container{
-        color: #fff;
         margin: 0.8em;
 
         .hourly-weather__hour{
@@ -79,7 +66,7 @@ span{
             justify-content: center;
             flex-direction: column;
             align-items: center;
-            border: solid #fff;
+            border: solid $dark;
             border-radius: 10px;
             height: 80px;
             width: 50px;
@@ -97,13 +84,10 @@ span{
 }
 
 .day-weather{
-    //background-color: pink;
     display: flex;
     overflow-x: scroll;
 
     .day-weather__container{
-        //background-color: red;
-        color: #fff;
         margin: 0.8em;
 
         .day-weather__day{
@@ -115,7 +99,7 @@ span{
             justify-content: center;
             flex-direction: column;
             align-items: center;
-            border: solid #fff;
+            border: solid $dark;
             border-radius: 10px;
             height: 100px;
             width: 50px;
@@ -132,6 +116,98 @@ span{
             img{
                 width: 100%;
             }
+        }
+    }
+}
+
+.btn-toggle{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 80px;
+    height: 30px;
+    border-radius: 15px;
+    background: $dark;
+    color: $light;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    cursor: pointer;
+}
+
+body.light{
+    transition: .8s;
+}
+
+body.dark{
+
+    background-color: $dark;
+    transition: .8s;
+    color: $light;
+
+    .btn-toggle {
+        background: #f1f1f1;
+        color: #333;
+    }
+
+        .instant-weather{
+            
+            .instant-weather__bloc{
+                
+                border: solid $light;
+            }
+        }
+        
+        .hourly-weather{
+            
+            .hourly-weather__container{
+                
+                .hourly-weather__temp-bloc{
+                    
+                    border: solid $light;
+        
+                }
+            }
+        }
+        
+        .day-weather{
+            
+            .day-weather__container{
+        
+                .day-weather__temp-bloc{
+                    border: solid $light;
+                }
+            }
+        }
+}
+@media screen and (min-width: 570px){
+
+    body{
+        display: flex;
+        justify-content: center;
+        height: 100vh;
+
+        main{
+            width: 570px;
+            height: 90vh;
+            border: solid $dark;
+            border-radius: 20px;
+            margin: auto;
+        }
+
+        .hourly-weather{
+            overflow-x: hidden;
+        }
+
+        .day-weather{
+            overflow-x: hidden;
+        }
+
+    }
+
+    body.dark{
+        main{
+            border: solid $light;
         }
     }
 }
